@@ -47,9 +47,6 @@ import personal.wuyi.jpropertiesorm.core.ConfigurationX;
  */
 @PropertySourceX({"config/app.properties"})
 public class AppConfig1 {
-	public AppConfig1() {
-	}
-	
 	public AppConfig1 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
 		return ConfigurationX.bindExternalConfigurationWithInstanceFieldsUsingPropertySourceX(this);
 	}

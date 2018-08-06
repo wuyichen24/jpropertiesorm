@@ -18,6 +18,7 @@ package personal.wuyi.jpropertiesorm.core;
 
 import java.io.IOException;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -30,9 +31,9 @@ import org.junit.Test;
 public class AppConfig3Test {
 	@Test
 	public void test() throws IllegalArgumentException, IllegalAccessException, IOException {
-		System.out.println(AppConfig3.host);
-		System.out.println(AppConfig3.apiKey);
-		System.out.println(AppConfig3.username);
-		System.out.println(AppConfig3.password);
+		Assert.assertEquals("aaa", AppConfig3.host);
+		Assert.assertEquals("bbb", AppConfig3.apiKey);
+		Assert.assertEquals("ccc", AppConfig3.username);
+		Assert.assertEquals("ddd", AppConfig3.password);
 	}
 }

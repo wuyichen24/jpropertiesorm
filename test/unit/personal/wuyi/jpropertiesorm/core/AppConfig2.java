@@ -50,8 +50,12 @@ import personal.wuyi.jpropertiesorm.core.ConfigurationX;
  * @since   1.1
  */
 public class AppConfig2 {
-	@PathX
-	private String path;
+	@PathX                  private String path;
+	
+	@ValueX("app.host")     private String host;
+	@ValueX("app.api_key")  private String apiKey;
+	@ValueX("app.username") private String username;
+	@ValueX("app.password") private String password;
 	
 	public AppConfig2(String path) {
 		this.path = path;
@@ -60,18 +64,6 @@ public class AppConfig2 {
 	public AppConfig2 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
 		return ConfigurationX.bindExternalConfigurationWithInstanceFieldsUsingPathX(this);
 	}
-	
-	@ValueX("app.host")
-	private String host;
-	
-	@ValueX("app.api_key")
-	private String apiKey;
-	
-	@ValueX("app.username")
-	private String username;
-	
-	@ValueX("app.password")
-	private String password;
 
 	public String getHost()                    { return host;              }
 	public void   setHost(String host)         { this.host = host;         }
