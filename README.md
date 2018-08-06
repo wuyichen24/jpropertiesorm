@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wuyichen24/jpropertiesorm.svg?branch=master)](https://travis-ci.org/wuyichen24/jpropertiesorm)
 [![Coverage Status](https://coveralls.io/repos/github/wuyichen24/jpropertiesorm/badge.svg?branch=master)](https://coveralls.io/github/wuyichen24/jpropertiesorm?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5372dcf05958418eb2c9701a5f67f699)](https://www.codacy.com/project/wuyichen24/jpropertiesorm/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wuyichen24/jpropertiesorm&amp;utm_campaign=Badge_Grade_Dashboard)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0) 
 
 Use annotation and reflection to handle the ORM (Object-Relational Mapping) between Java class and the Java related external configuration files (.properties).
