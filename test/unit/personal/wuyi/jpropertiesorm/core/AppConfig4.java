@@ -29,7 +29,7 @@ import personal.wuyi.jpropertiesorm.core.ConfigurationX;
  * 
  * <p>This class will use the static block to trigger the operation of 
  * grabbing the parameters from the external configuration file and populate 
- * them into the static fields of this class.
+ * them into the static fields of this class. 
  * 
  * <p>
  * This solution is similar to the AppConfig3, and it has some drawbacks:
