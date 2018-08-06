@@ -16,6 +16,10 @@
 
 package personal.wuyi.jpropertiesorm.core;
 
+import java.io.IOException;
+
+import org.junit.Test;
+
 /**
  * The demonstration for using AppConfig3
  * 
@@ -24,7 +28,8 @@ package personal.wuyi.jpropertiesorm.core;
  * @version 1.1
  */
 public class AppConfig3Test {
-	public static void main(String[] args) {
+	@Test
+	public void test() throws IllegalArgumentException, IllegalAccessException, IOException {
 		System.out.println(AppConfig3.host);
 		System.out.println(AppConfig3.apiKey);
 		System.out.println(AppConfig3.username);
