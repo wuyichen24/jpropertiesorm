@@ -42,7 +42,7 @@ public class ConfigurationY extends ConfigurationX {
 	 **/
 	static {
 		try {
-			Set<Class<?>> classSet = ReflectUtil.getSubTypesOf(ConfigurationX.class);
+			Set<Class<?>> classSet = ReflectUtil.getSubTypesOf(ConfigurationY.class);
 			for (Class<?> classs : classSet) {
 				bindExternalConfigurationWithStaticFields(classs);
 			}

@@ -51,6 +51,7 @@ dependencies {
 	testCompile 'com.vmlens:concurrent-junit:1.0.0'
 	compile 'org.testng:testng:6.5.2'
 	compile 'org.easymock:easymock:3.4'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
 
     // Project Dependencies
 	compile fileTree(dir: 'lib', include: ['*.jar'])
