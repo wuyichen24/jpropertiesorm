@@ -47,22 +47,15 @@ import personal.wuyi.jpropertiesorm.core.ConfigurationX;
  */
 @PropertySourceX({"config/app.properties"})
 public class AppConfig1 {
+	@ValueX("app.host")     private String host;
+	@ValueX("app.api_key")  private String apiKey;
+	@ValueX("app.username") private String username;	
+	@ValueX("app.password") private String password;
+	
 	public AppConfig1 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
 		return ConfigurationX.bindExternalConfigurationWithInstanceFieldsUsingPropertySourceX(this);
 	}
 	
-	@ValueX("app.host")
-	private String host;
-	
-	@ValueX("app.api_key")
-	private String apiKey;
-	
-	@ValueX("app.username")
-	private String username;
-	
-	@ValueX("app.password")
-	private String password;
-
 	public String getHost()                    { return host;              }
 	public void   setHost(String host)         { this.host = host;         }
 	public String getApiKey()                  { return apiKey;            }
