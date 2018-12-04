@@ -26,6 +26,8 @@ import org.junit.Test;
 
 import personal.wuyi.jpropertiesorm.example.AppConfig2;
 import personal.wuyi.jpropertiesorm.wrong.AppConfigError1;
+import personal.wuyi.jpropertiesorm.wrong.AppConfigError5;
+import personal.wuyi.jpropertiesorm.wrong.AppConfigError6;
 
 /**
  * Test class for {@code ConfigurationX}.
@@ -40,7 +42,7 @@ import personal.wuyi.jpropertiesorm.wrong.AppConfigError1;
  */
 public class ConfigurationXExceptionTest {
 	@Test
-	public void bindExternalConfigurationWithInstanceFieldsUsingPropertySourceXTest() throws IllegalArgumentException, IllegalAccessException, IOException {
+	public void bindExternalConfigurationWithInstanceFieldsUsingPropertySourceXExceptionTest() throws IllegalArgumentException, IllegalAccessException, IOException {
 		// test properties file doesn't exist (based on AppConfig1 style)
 		try {
 			new AppConfigError1().initialize();
@@ -55,6 +57,25 @@ public class ConfigurationXExceptionTest {
 	        fail("Expected an FileNotFoundException to be thrown");
 	    } catch (FileNotFoundException e) {
 	        assertThat(e.getMessage(), is("config/appABC.properties is not existing"));
+	    }
+	}
+	
+	@Test
+	public void populateInstanceFieldsWithPropertiesExceptionTest() throws IllegalArgumentException, IllegalAccessException, IOException {
+		// test one field can not be static
+		try {
+			new AppConfigError5().initialize();
+	        fail("Expected an IllegalArgumentException to be thrown");
+	    } catch (IllegalArgumentException e) {
+	        assertThat(e.getMessage(), is("apiKey field can not be static."));
+	    }
+		
+		// test one parameter is missing in the properties file
+		try {
+			new AppConfigError6().initialize();
+	        fail("Expected an IllegalArgumentException to be thrown");
+	    } catch (IllegalArgumentException e) {
+	        assertThat(e.getMessage(), is("config/app.properties is missing parameter: app.orgnization"));
 	    }
 	}
 }
