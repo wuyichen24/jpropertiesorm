@@ -59,14 +59,14 @@ import personal.wuyi.jpropertiesorm.core.ConfigurationY;
 @PropertySourceX({ "config/app.properties" })
 public class AppConfig3 extends ConfigurationY {
 	@ValueX("app.host")
-	static String host;
+	public static String host;
 
 	@ValueX("app.api_key")
-	static String apiKey;
+	public static String apiKey;
 
 	@ValueX("app.username")
-	static String username;
+	public static String username;
 
 	@ValueX("app.password")
-	static String password;
+	public static String password;
 }

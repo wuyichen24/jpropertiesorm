@@ -58,14 +58,14 @@ public class AppConfig4 {
 	}
 	
 	@ValueX("app.host")
-	static String host;
+	public static String host;
 	
 	@ValueX("app.api_key")
-	static String apiKey;
+	public static String apiKey;
 	
 	@ValueX("app.username")
-	static String username;
+	public static String username;
 	
 	@ValueX("app.password")
-	static String password;
+	public static String password;
 }
