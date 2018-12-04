@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package personal.wuyi.jpropertiesorm.core;
+package personal.wuyi.jpropertiesorm.example;
 
 import java.io.IOException;
 

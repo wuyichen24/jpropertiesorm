@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package personal.wuyi.jpropertiesorm.core;
+package personal.wuyi.jpropertiesorm.example;
 
 import java.io.IOException;
 
@@ -22,18 +22,19 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * The demonstration for using AppConfig3
+ * The demonstration for using AppConfig1
  * 
  * @author  Wuyi Chen
  * @date    12/27/2017
  * @version 1.1
  */
-public class AppConfig3Test {
+public class AppConfig1Test {
 	@Test
 	public void test() throws IllegalArgumentException, IllegalAccessException, IOException {
-		Assert.assertEquals("aaa", AppConfig3.host);
-		Assert.assertEquals("bbb", AppConfig3.apiKey);
-		Assert.assertEquals("ccc", AppConfig3.username);
-		Assert.assertEquals("ddd", AppConfig3.password);
+		AppConfig1 config = new AppConfig1().initialize();
+		Assert.assertEquals("aaa", config.getHost());
+		Assert.assertEquals("bbb", config.getApiKey());
+		Assert.assertEquals("ccc", config.getUsername());
+		Assert.assertEquals("ddd", config.getPassword());
 	}
 }
