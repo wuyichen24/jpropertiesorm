@@ -25,9 +25,11 @@ import java.io.IOException;
 import org.junit.Test;
 
 import personal.wuyi.jpropertiesorm.example.AppConfig2;
-import personal.wuyi.jpropertiesorm.wrong.AppConfigError1;
-import personal.wuyi.jpropertiesorm.wrong.AppConfigError5;
-import personal.wuyi.jpropertiesorm.wrong.AppConfigError6;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error1;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error2;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error3;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error4;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error5;
 
 /**
  * Test class for {@code ConfigurationX}.
@@ -45,7 +47,7 @@ public class ConfigurationXExceptionTest {
 	public void bindExternalConfigurationWithInstanceFieldsUsingPropertySourceXExceptionTest() throws IllegalArgumentException, IllegalAccessException, IOException {
 		// test properties file doesn't exist (based on AppConfig1 style)
 		try {
-			new AppConfigError1().initialize();
+			new AppConfig1Error1().initialize();
 	        fail("Expected an FileNotFoundException to be thrown");
 	    } catch (FileNotFoundException e) {
 	        assertThat(e.getMessage(), is("config/appABC.properties is not existing"));
@@ -64,7 +66,7 @@ public class ConfigurationXExceptionTest {
 	public void populateInstanceFieldsWithPropertiesExceptionTest() throws IllegalArgumentException, IllegalAccessException, IOException {
 		// test one field can not be static
 		try {
-			new AppConfigError5().initialize();
+			new AppConfig1Error2().initialize();
 	        fail("Expected an IllegalArgumentException to be thrown");
 	    } catch (IllegalArgumentException e) {
 	        assertThat(e.getMessage(), is("apiKey field can not be static."));
@@ -72,10 +74,29 @@ public class ConfigurationXExceptionTest {
 		
 		// test one parameter is missing in the properties file
 		try {
-			new AppConfigError6().initialize();
+			new AppConfig1Error3().initialize();
 	        fail("Expected an IllegalArgumentException to be thrown");
 	    } catch (IllegalArgumentException e) {
 	        assertThat(e.getMessage(), is("config/app.properties is missing parameter: app.orgnization"));
 	    }
+	}
+	
+	@Test
+	public void validatePropertySourceXInConfigClassExceptionTest() throws IllegalAccessException, IOException {
+		// test missing PropertySourceX annotation
+		try {
+			new AppConfig1Error4().initialize();
+			fail("Expected an IllegalArgumentException to be thrown");
+		} catch (IllegalArgumentException e) {
+			assertThat(e.getMessage(), is("AppConfig1Error4 needs to have PropertySourceX annotation."));
+		}
+		
+		// test PropertySourceX is missing value parameter
+		try {
+			new AppConfig1Error5().initialize();
+			fail("Expected an IllegalArgumentException to be thrown");
+		} catch (IllegalArgumentException e) {
+			assertThat(e.getMessage(), is("The PropertySourceX annotation in AppConfig1Error5 class doesn't have proper values."));
+		}
 	}
 }

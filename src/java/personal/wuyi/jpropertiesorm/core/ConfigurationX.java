@@ -314,13 +314,10 @@ public class ConfigurationX {
 	 */
 	public static void validatePropertySourceXInConfigClass(final Class<?> clazz, final PropertySourceX propertiesSourceX) {
 		if (propertiesSourceX == null) {
-			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PropertySourceX.class.getSimpleName() + " anntation.");
-		}
-		if (propertiesSourceX.value() == null) {
-			throw new IllegalArgumentException("The " + PropertySourceX.class.getSimpleName() + " anntation in " + clazz.getSimpleName() + " class is missing value field.");
+			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PropertySourceX.class.getSimpleName() + " annotation.");
 		}
 		if (propertiesSourceX.value().length == 0) {
-			throw new IllegalArgumentException("The " + PropertySourceX.class.getSimpleName() + " anntation in " + clazz.getSimpleName() + " class doesn't have proper values.");
+			throw new IllegalArgumentException("The " + PropertySourceX.class.getSimpleName() + " ann0tation in " + clazz.getSimpleName() + " class doesn't have proper values.");
 		}
 	}
 	

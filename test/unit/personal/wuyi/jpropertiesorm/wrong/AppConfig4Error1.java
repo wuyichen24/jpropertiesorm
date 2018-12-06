@@ -21,10 +21,10 @@ import personal.wuyi.jpropertiesorm.annotation.ValueX;
 import personal.wuyi.jpropertiesorm.core.ConfigurationX;
 
 @PropertySourceX({"config/appABC.properties"})   // file doesn't exist
-public class AppConfigError4 {
+public class AppConfig4Error1 {
 	static {
 		try {
-			ConfigurationX.bindExternalConfigurationWithStaticFields(AppConfigError4.class);
+			ConfigurationX.bindExternalConfigurationWithStaticFields(AppConfig4Error1.class);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

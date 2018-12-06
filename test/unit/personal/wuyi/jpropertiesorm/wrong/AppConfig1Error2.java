@@ -23,20 +23,20 @@ import personal.wuyi.jpropertiesorm.annotation.ValueX;
 import personal.wuyi.jpropertiesorm.core.ConfigurationX;
 
 @PropertySourceX({"config/app.properties"})
-public class AppConfigError5 {
+public class AppConfig1Error2 {
 	@ValueX("app.host")     private        String host;
 	@ValueX("app.api_key")  private static String apiKey;   // field can not be static
 	@ValueX("app.username") private        String username;	
 	@ValueX("app.password") private        String password;
 	
-	public AppConfigError5 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
+	public AppConfig1Error2 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
 		return ConfigurationX.bindExternalConfigurationWithInstanceFieldsUsingPropertySourceX(this);
 	}
 	
 	public String getHost()                    { return host;                     }
 	public void   setHost(String host)         { this.host = host;                }
 	public String getApiKey()                  { return apiKey;                   }
-	public void   setApiKey(String apiKey)     { AppConfigError5.apiKey = apiKey; }
+	public void   setApiKey(String apiKey)     { AppConfig1Error2.apiKey = apiKey; }
 	public String getUsername()                { return username;                 }
 	public void   setUsername(String username) { this.username = username;        }
 	public String getPassword()                { return password;                 }

@@ -23,13 +23,13 @@ import personal.wuyi.jpropertiesorm.annotation.ValueX;
 import personal.wuyi.jpropertiesorm.core.ConfigurationX;
 
 @PropertySourceX({"config/app.properties"}) 
-public class AppConfigError6 {
+public class AppConfig1Error3 {
 	@ValueX("app.host")        private String host;
 	@ValueX("app.api_key")     private String apiKey;
 	@ValueX("app.orgnization") private String orgnization;	 // this parameter is not existing in the properties file
 	@ValueX("app.password")    private String password;
 	
-	public AppConfigError6 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
+	public AppConfig1Error3 initialize() throws IllegalArgumentException, IllegalAccessException, IOException {
 		return ConfigurationX.bindExternalConfigurationWithInstanceFieldsUsingPropertySourceX(this);
 	}
 	
