@@ -133,7 +133,7 @@ public class ConfigurationX {
 		if (properties == null) {
 			throw new FileNotFoundException(configFilePath + " is not existing");
 		}
-		
+	
 		return populateInstanceFieldsWithProperties(t, properties, configFilePath);
 	}
 	
