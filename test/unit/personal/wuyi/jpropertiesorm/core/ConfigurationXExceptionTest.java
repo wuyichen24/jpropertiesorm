@@ -30,6 +30,9 @@ import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error2;
 import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error3;
 import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error4;
 import personal.wuyi.jpropertiesorm.wrong.AppConfig1Error5;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig2Error1;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig2Error2;
+import personal.wuyi.jpropertiesorm.wrong.AppConfig2Error3;
 
 /**
  * Test class for {@code ConfigurationX}.
@@ -97,6 +100,33 @@ public class ConfigurationXExceptionTest {
 			fail("Expected an IllegalArgumentException to be thrown");
 		} catch (IllegalArgumentException e) {
 			assertThat(e.getMessage(), is("The PropertySourceX annotation in AppConfig1Error5 class doesn't have proper values."));
+		}
+	}
+	
+	@Test
+	public void validatePathXInConfigClassExceptionTest() throws IllegalArgumentException, IllegalAccessException, IOException {
+		// test missing PathX annotation
+		try {
+			new AppConfig2Error1("config/app.properties").initialize();
+			fail("Expected an IllegalArgumentException to be thrown");
+		} catch (IllegalArgumentException e) {
+			assertThat(e.getMessage(), is("AppConfig2Error1 needs to have PathX annotation."));
+		}
+		
+		// test PathX annotation more than one
+		try {
+			new AppConfig2Error2("config/app.properties").initialize();
+			fail("Expected an IllegalArgumentException to be thrown");
+		} catch (IllegalArgumentException e) {
+			assertThat(e.getMessage(), is("AppConfig2Error2 needs to have only one PathX annotation."));
+		}
+		
+		// test the field annotated by PathX should be String
+		try {
+			new AppConfig2Error3("config/app.properties").initialize();
+			fail("Expected an IllegalArgumentException to be thrown");
+		} catch (IllegalArgumentException e) {
+			assertThat(e.getMessage(), is("The field marked by PathX annotation needs to be String."));
 		}
 	}
 }

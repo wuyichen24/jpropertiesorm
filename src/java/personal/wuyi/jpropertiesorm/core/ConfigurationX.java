@@ -335,13 +335,13 @@ public class ConfigurationX {
 	 */
 	public static void validatePathXInConfigClass (final Class<?> clazz, final Field[] pathFields) {
 		if (pathFields == null) {
-			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PathX.class.getSimpleName() + " anntation.");
+			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PathX.class.getSimpleName() + " annotation.");
 		}
 		if (pathFields.length == 0) {
-			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PathX.class.getSimpleName() + " anntation.");
+			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PathX.class.getSimpleName() + " annotation.");
 		}
 		if (pathFields.length > 1) {
-			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have only one " + PathX.class.getSimpleName() + " anntation.");
+			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have only one " + PathX.class.getSimpleName() + " annotation.");
 		}
 		if (pathFields.length == 1 && pathFields[0].getType() != String.class) {
 			throw new IllegalArgumentException("The field marked by " + PathX.class.getSimpleName() + " annotation needs to be String.");
