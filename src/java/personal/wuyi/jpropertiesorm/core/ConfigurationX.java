@@ -317,7 +317,7 @@ public class ConfigurationX {
 			throw new IllegalArgumentException(clazz.getSimpleName() + " needs to have " + PropertySourceX.class.getSimpleName() + " annotation.");
 		}
 		if (propertiesSourceX.value().length == 0) {
-			throw new IllegalArgumentException("The " + PropertySourceX.class.getSimpleName() + " ann0tation in " + clazz.getSimpleName() + " class doesn't have proper values.");
+			throw new IllegalArgumentException("The " + PropertySourceX.class.getSimpleName() + " annotation in " + clazz.getSimpleName() + " class doesn't have proper values.");
 		}
 	}
 	
